@@ -1,0 +1,82 @@
+{
+  "image_id": "data/ReplicaPano-office_3_000-Scene_Info-00018/rgb.png",
+  "pre_prompt": "",
+  "conversation": [
+    {
+      "turn_id": 1,
+      "question": "How many trash_can(s) are in this room?",
+      "answer": "2",
+      "skills_tested": "object_counting"
+    },
+    {
+      "turn_id": 2,
+      "question": "How many chair(s) are in this room?",
+      "answer": "9",
+      "skills_tested": "object_counting"
+    },
+    {
+      "turn_id": 3,
+      "question": "How many table(s) are in this room?",
+      "answer": "2",
+      "skills_tested": "object_counting"
+    },
+    {
+      "turn_id": 4,
+      "question": "How many window(s) are in this room?",
+      "answer": "4",
+      "skills_tested": "object_counting"
+    },
+    {
+      "turn_id": 5,
+      "question": "How many door(s) are in this room?",
+      "answer": "2",
+      "skills_tested": "object_counting"
+    },
+    {
+      "turn_id": 6,
+      "question": "Measuring from the closest point of each object, which of these objects (window, chair, sofa, table) is the closest to the tv in this PANORAMA?",
+      "answer": "window",
+      "skills_tested": "relative_distance"
+    },
+    {
+      "turn_id": 7,
+      "question": "Measuring from the closest point of each object, which of these objects (door, sofa, trash_can, chair) is the closest to the tv in this PANORAMA?",
+      "answer": "sofa",
+      "skills_tested": "relative_distance"
+    },
+    {
+      "turn_id": 8,
+      "question": "Measuring from the closest point of each object, which of these objects (door, window, trash_can, sofa) is the closest to the tv in this PANORAMA?",
+      "answer": "window",
+      "skills_tested": "relative_distance"
+    },
+    {
+      "turn_id": 9,
+      "question": "Measuring from the closest point of each object, which of these objects (door, table, sofa, window) is the closest to the tv in this PANORAMA?",
+      "answer": "window",
+      "skills_tested": "relative_distance"
+    },
+    {
+      "turn_id": 10,
+      "question": "Measuring from the closest point of each object, which of these objects (door, window, sofa, chair) is the closest to the tv in this PANORAMA?",
+      "answer": "window",
+      "skills_tested": "relative_distance"
+    },
+    {
+      "turn_id": 14,
+      "question": "If I am standing by the tv and facing the closest table, is the closest chair to my front, back, left, right, front-left, front-right, back-left, or back-right in this PANORAMA?",
+      "answer": "Front Left",
+      "skills_tested": "relative_direction"
+    },
+    {
+      "turn_id": 15,
+      "question": "If I am standing by the tv and facing the closest chair, is the closest sofa to my front, back, left, right, front-left, front-right, back-left, or back-right in this PANORAMA?",
+      "answer": "Front Left",
+      "skills_tested": "relative_direction"
+    }
+  ],
+  "metadata": {
+    "creation_date": "2025-04-23",
+    "version": "1.0"
+  }
+}

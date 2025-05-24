@@ -1,0 +1,88 @@
+{
+  "image_id": "data/ReplicaPano-large_apartment_1_001-Scene_Info-00026/rgb.png",
+  "pre_prompt": "",
+  "conversation": [
+    {
+      "turn_id": 1,
+      "question": "How many bottom_cabinet(s) are in this room?",
+      "answer": "0",
+      "skills_tested": "object_counting"
+    },
+    {
+      "turn_id": 2,
+      "question": "How many sink(s) are in this room?",
+      "answer": "0",
+      "skills_tested": "object_counting"
+    },
+    {
+      "turn_id": 3,
+      "question": "How many trash_can(s) are in this room?",
+      "answer": "0",
+      "skills_tested": "object_counting"
+    },
+    {
+      "turn_id": 4,
+      "question": "How many rug(s) are in this room?",
+      "answer": "1",
+      "skills_tested": "object_counting"
+    },
+    {
+      "turn_id": 5,
+      "question": "How many cabinet(s) are in this room?",
+      "answer": "1",
+      "skills_tested": "object_counting"
+    },
+    {
+      "turn_id": 6,
+      "question": "Measuring from the closest point of each object, which of these objects (cabinet, bed, shelf, rug) is the closest to the mirror in this PANORAMA?",
+      "answer": "cabinet",
+      "skills_tested": "relative_distance"
+    },
+    {
+      "turn_id": 7,
+      "question": "Measuring from the closest point of each object, which of these objects (rug, sink, sofa, cabinet) is the closest to the mirror in this PANORAMA?",
+      "answer": "cabinet",
+      "skills_tested": "relative_distance"
+    },
+    {
+      "turn_id": 8,
+      "question": "Measuring from the closest point of each object, which of these objects (chair, door, bed, shelf) is the closest to the tv in this PANORAMA?",
+      "answer": "door",
+      "skills_tested": "relative_distance"
+    },
+    {
+      "turn_id": 9,
+      "question": "Measuring from the closest point of each object, which of these objects (chair, sofa, lamp, cabinet) is the closest to the rug in this PANORAMA?",
+      "answer": "chair",
+      "skills_tested": "relative_distance"
+    },
+    {
+      "turn_id": 10,
+      "question": "Measuring from the closest point of each object, which of these objects (table, bed, door, mirror) is the closest to the rug in this PANORAMA?",
+      "answer": "table",
+      "skills_tested": "relative_distance"
+    },
+    {
+      "turn_id": 11,
+      "question": "If I am standing by the rug and facing the closest bed, is the closest bottom_cabinet to my front, back, left, right, front-left, front-right, back-left, or back-right in this PANORAMA?",
+      "answer": "The orienting object or querying object is not found in the picture.",
+      "skills_tested": "relative_direction"
+    },
+    {
+      "turn_id": 12,
+      "question": "If I am standing by the door and facing the closest fridge, is the closest mirror to my front, back, left, right, front-left, front-right, back-left, or back-right in this PANORAMA?",
+      "answer": "The orienting object or querying object is not found in the picture.",
+      "skills_tested": "relative_direction"
+    },
+    {
+      "turn_id": 13,
+      "question": "If I am standing by the door and facing the closest picture, is the closest trash_can to my front, back, left, right, front-left, front-right, back-left, or back-right in this PANORAMA?",
+      "answer": "The orienting object or querying object is not found in the picture.",
+      "skills_tested": "relative_direction"
+    }
+  ],
+  "metadata": {
+    "creation_date": "2025-04-23",
+    "version": "1.0"
+  }
+}

@@ -1,0 +1,172 @@
+{
+  "image_id": "data/DeepPanoContext-igibson-Pomaria_0_int-00006/rgb.png",
+  "pre_prompt": "",
+  "conversation": [
+    {
+      "turn_id": 1,
+      "question": "How many window(s) are in this room?",
+      "answer": "1",
+      "skills_tested": "object_counting"
+    },
+    {
+      "turn_id": 2,
+      "question": "How many sofa(s) are in this room?",
+      "answer": "1",
+      "skills_tested": "object_counting"
+    },
+    {
+      "turn_id": 3,
+      "question": "How many shelf(s) are in this room?",
+      "answer": "6",
+      "skills_tested": "object_counting"
+    },
+    {
+      "turn_id": 4,
+      "question": "How many standing_tv(s) are in this room?",
+      "answer": "1",
+      "skills_tested": "object_counting"
+    },
+    {
+      "turn_id": 5,
+      "question": "How many sofa_chair(s) are in this room?",
+      "answer": "1",
+      "skills_tested": "object_counting"
+    },
+    {
+      "turn_id": 6,
+      "question": "How many coffee_table(s) are in this room?",
+      "answer": "1",
+      "skills_tested": "object_counting"
+    },
+    {
+      "turn_id": 7,
+      "question": "How many door(s) are in this room?",
+      "answer": "1",
+      "skills_tested": "object_counting"
+    },
+    {
+      "turn_id": 8,
+      "question": "Measuring from the closest point of each object, which of these objects (standing_tv, sofa_chair, shelf, window) is the closest to the sofa in this PANORAMA?",
+      "answer": "shelf",
+      "skills_tested": "relative_distance"
+    },
+    {
+      "turn_id": 9,
+      "question": "Measuring from the closest point of each object, which of these objects (window, standing_tv, sofa, shelf) is the closest to the coffee_table in this PANORAMA?",
+      "answer": "sofa",
+      "skills_tested": "relative_distance"
+    },
+    {
+      "turn_id": 10,
+      "question": "Measuring from the closest point of each object, which of these objects (sofa_chair, door, standing_tv, window) is the closest to the sofa in this PANORAMA?",
+      "answer": "window",
+      "skills_tested": "relative_distance"
+    },
+    {
+      "turn_id": 11,
+      "question": "Measuring from the closest point of each object, which of these objects (standing_tv, sofa, door, coffee_table) is the closest to the window in this PANORAMA?",
+      "answer": "coffee_table",
+      "skills_tested": "relative_distance"
+    },
+    {
+      "turn_id": 12,
+      "question": "Measuring from the closest point of each object, which of these objects (shelf, door, coffee_table, standing_tv) is the closest to the sofa_chair in this PANORAMA?",
+      "answer": "shelf",
+      "skills_tested": "relative_distance"
+    },
+    {
+      "turn_id": 13,
+      "question": "Measuring from the closest point of each object, which of these objects (door, shelf, standing_tv, sofa) is the closest to the sofa_chair in this PANORAMA?",
+      "answer": "shelf",
+      "skills_tested": "relative_distance"
+    },
+    {
+      "turn_id": 14,
+      "question": "Measuring from the closest point of each object, which of these objects (sofa, coffee_table, standing_tv, shelf) is the closest to the door in this PANORAMA?",
+      "answer": "shelf",
+      "skills_tested": "relative_distance"
+    },
+    {
+      "turn_id": 15,
+      "question": "Measuring from the closest point of each object, which of these objects (sofa, shelf, window, coffee_table) is the closest to the door in this PANORAMA?",
+      "answer": "shelf",
+      "skills_tested": "relative_distance"
+    },
+    {
+      "turn_id": 16,
+      "question": "Measuring from the closest point of each object, which of these objects (coffee_table, shelf, door, standing_tv) is the closest to the window in this PANORAMA?",
+      "answer": "shelf",
+      "skills_tested": "relative_distance"
+    },
+    {
+      "turn_id": 17,
+      "question": "Measuring from the closest point of each object, which of these objects (standing_tv, sofa, door, sofa_chair) is the closest to the window in this PANORAMA?",
+      "answer": "sofa_chair",
+      "skills_tested": "relative_distance"
+    },
+    {
+      "turn_id": 18,
+      "question": "If I am standing by the sofa_chair and facing the closest shelf, is the closest sofa to my front, back, left, right, front-left, front-right, back-left, or back-right in this PANORAMA?",
+      "answer": "Front Left",
+      "skills_tested": "relative_direction"
+    },
+    {
+      "turn_id": 19,
+      "question": "If I am standing by the coffee_table and facing the closest standing_tv, is the closest door to my front, back, left, right, front-left, front-right, back-left, or back-right in this PANORAMA?",
+      "answer": "Front Left",
+      "skills_tested": "relative_direction"
+    },
+    {
+      "turn_id": 20,
+      "question": "If I am standing by the standing_tv and facing the closest sofa_chair, is the closest shelf to my front, back, left, right, front-left, front-right, back-left, or back-right in this PANORAMA?",
+      "answer": "",
+      "skills_tested": "relative_direction"
+    },
+    {
+      "turn_id": 21,
+      "question": "If I am standing by the coffee_table and facing the closest standing_tv, is the closest door to my front, back, left, right, front-left, front-right, back-left, or back-right in this PANORAMA?",
+      "answer": "Front Left",
+      "skills_tested": "relative_direction"
+    },
+    {
+      "turn_id": 22,
+      "question": "If I am standing by the window and facing the closest shelf, is the closest standing_tv to my front, back, left, right, front-left, front-right, back-left, or back-right in this PANORAMA?",
+      "answer": "Front Right",
+      "skills_tested": "relative_direction"
+    },
+    {
+      "turn_id": 23,
+      "question": "If I am standing by the coffee_table and facing the closest shelf, is the closest door to my front, back, left, right, front-left, front-right, back-left, or back-right in this PANORAMA?",
+      "answer": "Back Right",
+      "skills_tested": "relative_direction"
+    },
+    {
+      "turn_id": 24,
+      "question": "If I am standing by the door and facing the closest standing_tv, is the closest shelf to my front, back, left, right, front-left, front-right, back-left, or back-right in this PANORAMA?",
+      "answer": "Front Left",
+      "skills_tested": "relative_direction"
+    },
+    {
+      "turn_id": 25,
+      "question": "If I am standing by the sofa_chair and facing the closest standing_tv, is the closest shelf to my front, back, left, right, front-left, front-right, back-left, or back-right in this PANORAMA?",
+      "answer": "Back Right",
+      "skills_tested": "relative_direction"
+    },
+    {
+      "turn_id": 26,
+      "question": "If I am standing by the door and facing the closest standing_tv, is the closest shelf to my front, back, left, right, front-left, front-right, back-left, or back-right in this PANORAMA?",
+      "answer": "Front Left",
+      "skills_tested": "relative_direction"
+    },
+    {
+      "turn_id": 27,
+      "question": "If I am standing by the sofa and facing the closest window, is the closest standing_tv to my front, back, left, right, front-left, front-right, back-left, or back-right in this PANORAMA?",
+      "answer": "Front Right",
+      "skills_tested": "relative_direction"
+    }
+  ],
+  "metadata": {
+    "creation_date": "2025-04-23",
+    "version": "1.0"
+  }
+}

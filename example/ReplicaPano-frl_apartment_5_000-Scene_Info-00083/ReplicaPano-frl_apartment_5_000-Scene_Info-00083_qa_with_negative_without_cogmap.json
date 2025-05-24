@@ -1,0 +1,100 @@
+{
+  "image_id": "data/ReplicaPano-frl_apartment_5_000-Scene_Info-00083/rgb.png",
+  "pre_prompt": "",
+  "conversation": [
+    {
+      "turn_id": 1,
+      "question": "How many mirror(s) are in this room?",
+      "answer": "0",
+      "skills_tested": "object_counting"
+    },
+    {
+      "turn_id": 2,
+      "question": "How many sink(s) are in this room?",
+      "answer": "1",
+      "skills_tested": "object_counting"
+    },
+    {
+      "turn_id": 3,
+      "question": "How many table(s) are in this room?",
+      "answer": "5",
+      "skills_tested": "object_counting"
+    },
+    {
+      "turn_id": 4,
+      "question": "How many coffee_table(s) are in this room?",
+      "answer": "0",
+      "skills_tested": "object_counting"
+    },
+    {
+      "turn_id": 5,
+      "question": "How many box(s) are in this room?",
+      "answer": "1",
+      "skills_tested": "object_counting"
+    },
+    {
+      "turn_id": 6,
+      "question": "Measuring from the closest point of each object, which of these objects (curtain, window, lamp, trash_can) is the closest to the tv in this PANORAMA?",
+      "answer": "window",
+      "skills_tested": "relative_distance"
+    },
+    {
+      "turn_id": 7,
+      "question": "Measuring from the closest point of each object, which of these objects (carpet, lamp, basket, box) is the closest to the sink in this PANORAMA?",
+      "answer": "lamp",
+      "skills_tested": "relative_distance"
+    },
+    {
+      "turn_id": 8,
+      "question": "Measuring from the closest point of each object, which of these objects (carpet, bed, table, pillow) is the closest to the picture in this PANORAMA?",
+      "answer": "table",
+      "skills_tested": "relative_distance"
+    },
+    {
+      "turn_id": 9,
+      "question": "Measuring from the closest point of each object, which of these objects (chair, basket, curtain, bed) is the closest to the sofa in this PANORAMA?",
+      "answer": "chair",
+      "skills_tested": "relative_distance"
+    },
+    {
+      "turn_id": 10,
+      "question": "Measuring from the closest point of each object, which of these objects (coffee_table, trash_can, tv, chair) is the closest to the lamp in this PANORAMA?",
+      "answer": "trash_can",
+      "skills_tested": "relative_distance"
+    },
+    {
+      "turn_id": 11,
+      "question": "If I am standing by the tv and facing the closest box, is the closest lamp to my front, back, left, right, front-left, front-right, back-left, or back-right in this PANORAMA?",
+      "answer": "Front Right",
+      "skills_tested": "relative_direction"
+    },
+    {
+      "turn_id": 12,
+      "question": "If I am standing by the lamp and facing the closest curtain, is the closest picture to my front, back, left, right, front-left, front-right, back-left, or back-right in this PANORAMA?",
+      "answer": "Front",
+      "skills_tested": "relative_direction"
+    },
+    {
+      "turn_id": 13,
+      "question": "If I am standing by the fridge and facing the closest pillow, is the closest mirror to my front, back, left, right, front-left, front-right, back-left, or back-right in this PANORAMA?",
+      "answer": "The orienting object or querying object is not found in the picture.",
+      "skills_tested": "relative_direction"
+    },
+    {
+      "turn_id": 14,
+      "question": "If I am standing by the curtain and facing the closest box, is the closest coffee_table to my front, back, left, right, front-left, front-right, back-left, or back-right in this PANORAMA?",
+      "answer": "The orienting object or querying object is not found in the picture.",
+      "skills_tested": "relative_direction"
+    },
+    {
+      "turn_id": 15,
+      "question": "If I am standing by the picture and facing the closest coffee_table, is the closest basket to my front, back, left, right, front-left, front-right, back-left, or back-right in this PANORAMA?",
+      "answer": "The orienting object or querying object is not found in the picture.",
+      "skills_tested": "relative_direction"
+    }
+  ],
+  "metadata": {
+    "creation_date": "2025-04-23",
+    "version": "1.0"
+  }
+}

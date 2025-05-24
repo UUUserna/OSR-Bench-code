@@ -1,0 +1,340 @@
+{
+  "image_id": "data/DeepPanoContext-igibson-Pomaria_0_int-00006/rgb.png",
+  "pre_prompt": "",
+  "conversation": [
+    {
+      "turn_id": 0,
+      "question": "[Task] This PANORAMA captures an indoor scene. Your objective is to identify specific objects within the panorama, understand the spatial arrangement of the scene, and estimate the center point of each object, assuming the entire scene is represented by a 10x10 grid. [Rule] 1. We provide the categories to care about in this scene: {chair, shelf, door, bottom_cabinet, rug, sofa, table, window, bed, picture, sofa_chair, cabinet, tv, sink, coffee_table, lamp, standing_tv}. Focus ONLY on these categories. 2. Estimate the center location of each instance within the provided categories, assuming the entire scene is represented by a 10x10 grid. 3. If a category contains multiple instances, include all of them. 4. Each object’s estimated location should accurately reflect its real position in the scene, preserving the relative spatial relationships among all objects. 5. Consider object distance from camera when positioning them. Closer objects should be placed near the center of the grid, while distant objects should be placed toward the edges. 6. If an object is partially visible or occluded, estimate its full position based on the visible parts. [Output] Present the estimated center locations for each object as a list within a dictionary. STRICTLY follow this JSON format And use INTEGERS with 10 to represent the coordinates: {\"category name\": [[x_1, y_1], ...], ...}",
+      "answer": [
+        [
+          [],
+          [],
+          [
+            "door"
+          ],
+          [
+            "shelf"
+          ],
+          [],
+          [],
+          [],
+          [],
+          [],
+          []
+        ],
+        [
+          [],
+          [],
+          [],
+          [],
+          [],
+          [
+            "standing_tv",
+            "shelf"
+          ],
+          [],
+          [],
+          [],
+          []
+        ],
+        [
+          [],
+          [
+            "sofa_chair"
+          ],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          []
+        ],
+        [
+          [
+            "shelf"
+          ],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [
+            "shelf"
+          ],
+          [],
+          [],
+          []
+        ],
+        [
+          [
+            "window"
+          ],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          []
+        ],
+        [
+          [],
+          [],
+          [
+            "coffee_table"
+          ],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          []
+        ],
+        [
+          [],
+          [],
+          [],
+          [
+            "sofa"
+          ],
+          [],
+          [],
+          [],
+          [],
+          [],
+          []
+        ],
+        [
+          [
+            "shelf"
+          ],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          []
+        ],
+        [
+          [],
+          [],
+          [],
+          [],
+          [
+            "shelf"
+          ],
+          [],
+          [],
+          [],
+          [],
+          []
+        ],
+        [
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          []
+        ]
+      ],
+      "skills_tested": "cognitive_map"
+    },
+    {
+      "turn_id": 1,
+      "question": "How many bed(s) are in this room?",
+      "answer": "0",
+      "skills_tested": "object_counting"
+    },
+    {
+      "turn_id": 2,
+      "question": "How many chair(s) are in this room?",
+      "answer": "0",
+      "skills_tested": "object_counting"
+    },
+    {
+      "turn_id": 3,
+      "question": "How many door(s) are in this room?",
+      "answer": "1",
+      "skills_tested": "object_counting"
+    },
+    {
+      "turn_id": 4,
+      "question": "How many cabinet(s) are in this room?",
+      "answer": "0",
+      "skills_tested": "object_counting"
+    },
+    {
+      "turn_id": 5,
+      "question": "How many sofa_chair(s) are in this room?",
+      "answer": "1",
+      "skills_tested": "object_counting"
+    },
+    {
+      "turn_id": 6,
+      "question": "How many lamp(s) are in this room?",
+      "answer": "0",
+      "skills_tested": "object_counting"
+    },
+    {
+      "turn_id": 7,
+      "question": "How many tv(s) are in this room?",
+      "answer": "0",
+      "skills_tested": "object_counting"
+    },
+    {
+      "turn_id": 8,
+      "question": "How many sink(s) are in this room?",
+      "answer": "0",
+      "skills_tested": "object_counting"
+    },
+    {
+      "turn_id": 9,
+      "question": "How many window(s) are in this room?",
+      "answer": "1",
+      "skills_tested": "object_counting"
+    },
+    {
+      "turn_id": 10,
+      "question": "How many shelf(s) are in this room?",
+      "answer": "6",
+      "skills_tested": "object_counting"
+    },
+    {
+      "turn_id": 11,
+      "question": "Measuring from the closest point of each object, which of these objects (table, standing_tv, sofa, lamp) is the closest to the sofa_chair in this PANORAMA?",
+      "answer": "standing_tv",
+      "skills_tested": "relative_distance"
+    },
+    {
+      "turn_id": 12,
+      "question": "Measuring from the closest point of each object, which of these objects (table, chair, picture, door) is the closest to the sofa_chair in this PANORAMA?",
+      "answer": "door",
+      "skills_tested": "relative_distance"
+    },
+    {
+      "turn_id": 13,
+      "question": "Measuring from the closest point of each object, which of these objects (sink, window, coffee_table, shelf) is the closest to the sofa_chair in this PANORAMA?",
+      "answer": "shelf",
+      "skills_tested": "relative_distance"
+    },
+    {
+      "turn_id": 14,
+      "question": "Measuring from the closest point of each object, which of these objects (chair, picture, bottom_cabinet, door) is the closest to the sofa_chair in this PANORAMA?",
+      "answer": "door",
+      "skills_tested": "relative_distance"
+    },
+    {
+      "turn_id": 15,
+      "question": "Measuring from the closest point of each object, which of these objects (sofa_chair, table, sink, window) is the closest to the sofa in this PANORAMA?",
+      "answer": "window",
+      "skills_tested": "relative_distance"
+    },
+    {
+      "turn_id": 16,
+      "question": "Measuring from the closest point of each object, which of these objects (cabinet, shelf, table, sink) is the closest to the sofa in this PANORAMA?",
+      "answer": "shelf",
+      "skills_tested": "relative_distance"
+    },
+    {
+      "turn_id": 17,
+      "question": "Measuring from the closest point of each object, which of these objects (cabinet, shelf, coffee_table, bottom_cabinet) is the closest to the sofa_chair in this PANORAMA?",
+      "answer": "shelf",
+      "skills_tested": "relative_distance"
+    },
+    {
+      "turn_id": 18,
+      "question": "Measuring from the closest point of each object, which of these objects (lamp, sofa_chair, bed, window) is the closest to the coffee_table in this PANORAMA?",
+      "answer": "window",
+      "skills_tested": "relative_distance"
+    },
+    {
+      "turn_id": 19,
+      "question": "Measuring from the closest point of each object, which of these objects (standing_tv, cabinet, shelf, picture) is the closest to the sofa in this PANORAMA?",
+      "answer": "shelf",
+      "skills_tested": "relative_distance"
+    },
+    {
+      "turn_id": 20,
+      "question": "Measuring from the closest point of each object, which of these objects (bed, coffee_table, window, lamp) is the closest to the door in this PANORAMA?",
+      "answer": "window",
+      "skills_tested": "relative_distance"
+    },
+    {
+      "turn_id": 21,
+      "question": "If I am standing by the window and facing the closest standing_tv, is the closest bottom_cabinet to my front, back, left, right, front-left, front-right, back-left, or back-right in this PANORAMA?",
+      "answer": "The orienting object or querying object is not found in the picture.",
+      "skills_tested": "relative_direction"
+    },
+    {
+      "turn_id": 22,
+      "question": "If I am standing by the coffee_table and facing the closest lamp, is the closest door to my front, back, left, right, front-left, front-right, back-left, or back-right in this PANORAMA?",
+      "answer": "The orienting object or querying object is not found in the picture.",
+      "skills_tested": "relative_direction"
+    },
+    {
+      "turn_id": 23,
+      "question": "If I am standing by the door and facing the closest picture, is the closest sofa to my front, back, left, right, front-left, front-right, back-left, or back-right in this PANORAMA?",
+      "answer": "The orienting object or querying object is not found in the picture.",
+      "skills_tested": "relative_direction"
+    },
+    {
+      "turn_id": 24,
+      "question": "If I am standing by the standing_tv and facing the closest coffee_table, is the closest sofa to my front, back, left, right, front-left, front-right, back-left, or back-right in this PANORAMA?",
+      "answer": "Front Left",
+      "skills_tested": "relative_direction"
+    },
+    {
+      "turn_id": 25,
+      "question": "If I am standing by the door and facing the closest sofa_chair, is the closest shelf to my front, back, left, right, front-left, front-right, back-left, or back-right in this PANORAMA?",
+      "answer": "Back Left",
+      "skills_tested": "relative_direction"
+    },
+    {
+      "turn_id": 26,
+      "question": "If I am standing by the window and facing the closest chair, is the closest door to my front, back, left, right, front-left, front-right, back-left, or back-right in this PANORAMA?",
+      "answer": "The orienting object or querying object is not found in the picture.",
+      "skills_tested": "relative_direction"
+    },
+    {
+      "turn_id": 27,
+      "question": "If I am standing by the sofa_chair and facing the closest sofa, is the closest lamp to my front, back, left, right, front-left, front-right, back-left, or back-right in this PANORAMA?",
+      "answer": "The orienting object or querying object is not found in the picture.",
+      "skills_tested": "relative_direction"
+    },
+    {
+      "turn_id": 28,
+      "question": "If I am standing by the sofa_chair and facing the closest table, is the closest sofa to my front, back, left, right, front-left, front-right, back-left, or back-right in this PANORAMA?",
+      "answer": "The orienting object or querying object is not found in the picture.",
+      "skills_tested": "relative_direction"
+    },
+    {
+      "turn_id": 29,
+      "question": "If I am standing by the window and facing the closest sofa, is the closest shelf to my front, back, left, right, front-left, front-right, back-left, or back-right in this PANORAMA?",
+      "answer": "Back Left",
+      "skills_tested": "relative_direction"
+    },
+    {
+      "turn_id": 30,
+      "question": "If I am standing by the standing_tv and facing the closest door, is the closest picture to my front, back, left, right, front-left, front-right, back-left, or back-right in this PANORAMA?",
+      "answer": "The orienting object or querying object is not found in the picture.",
+      "skills_tested": "relative_direction"
+    }
+  ],
+  "metadata": {
+    "creation_date": "2025-04-23",
+    "version": "1.0"
+  }
+}

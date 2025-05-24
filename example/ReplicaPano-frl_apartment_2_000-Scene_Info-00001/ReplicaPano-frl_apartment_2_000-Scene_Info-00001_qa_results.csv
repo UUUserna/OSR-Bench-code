@@ -1,0 +1,174 @@
+image_id,model,turn_id,skills_tested,question,model_answer,ground_truth,score
+data/ReplicaPano-frl_apartment_2_000-Scene_Info-00001/rgb.png,google/gemini-pro-1.5,0,cognitive_map,"[Task] This PANORAMA captures an indoor scene. Your objective is to identify specific objects within the panorama, understand the spatial arrangement of the scene, and estimate the center point of each object, assuming the entire scene is represented by a 10x10 grid. [Rule] 1. We provide the categories to care about in this scene: {cabinet, window, lamp, chair, table, sofa, rug, tv, basket, trash_can, fridge}. Focus ONLY on these categories. 2. Estimate the center location of each instance within the provided categories, assuming the entire scene is represented by a 10x10 grid. 3. If a category contains multiple instances, include all of them. 4. Each object’s estimated location should accurately reflect its real position in the scene, preserving the relative spatial relationships among all objects. 5. Consider object distance from camera when positioning them. Closer objects should be placed near the center of the grid, while distant objects should be placed toward the edges. 6. If an object is partially visible or occluded, estimate its full position based on the visible parts. [Output] Present the estimated center locations for each object as a list within a dictionary. STRICTLY follow this JSON format And use INTEGERS with 10 to represent the coordinates: {""category name"": [[x_1, y_1], ...], ...}","```json
+{
+  ""cabinet"": [[2, 2], [4, 4], [9, 8], [2, 8]],
+  ""window"": [],
+  ""lamp"": [],
+  ""chair"": [[5, 4], [6, 4], [8, 6]],
+  ""table"": [[5, 3], [5, 5], [8, 7], [2, 2], [2, 1]],
+  ""sofa"": [[6, 5]],
+  ""rug"": [[2, 2], [6, 5], [9, 7]],
+  ""tv"": [[1, 2], [9, 9]],
+  ""basket"": [],
+  ""trash_can"": [],
+  ""fridge"": []
+}
+```","[[[], ['cabinet', 'window'], ['lamp', 'chair'], ['table', 'chair', 'window'], [], ['sofa', 'rug', 'window'], ['window'], [], [], []], [['cabinet', 'tv'], ['table', 'rug'], [], [], ['chair'], ['chair', 'table'], [], [], [], []], [['table', 'table'], ['cabinet', 'lamp'], ['cabinet'], [], [], [], [], [], [], []], [[], [], ['basket'], [], ['chair'], ['table'], ['tv'], [], [], []], [[], [], [], ['trash_can'], [], [], [], [], [], []], [[], [], [], ['fridge'], [], ['cabinet', 'cabinet'], [], ['cabinet'], [], []], [[], [], [], [], [], [], [], [], [], []], [[], [], [], [], [], [], [], [], [], []], [[], [], [], [], [], [], [], [], [], []], [[], [], [], [], [], [], [], [], [], []]]","{""overall"": {""precision"": 0.4444444444444444, ""recall"": 0.25806451612903225, ""f1"": 0.32653061224489793, ""avg_distance"": 3.2318330048061035, ""tp"": 8, ""fp"": 10, ""fn"": 24, ""chair_s"": 0, ""chair_i"": 0.0, ""chair_instance"": 0.0, ""hallucinated_classes"": []}, ""per_class"": {""cabinet"": {""precision"": 0.5, ""recall"": 0.2857142857142857, ""f1"": 0.36363636363636365, ""avg_distance"": 2.3156013812390923, ""tp"": 2, ""fp"": 2, ""fn"": 5}, ""window"": {""precision"": 1.0, ""recall"": 0, ""f1"": 0, ""avg_distance"": 15, ""tp"": 0, ""fp"": 0, ""fn"": 4}, ""sofa"": {""precision"": 0.0, ""recall"": 0.0, ""f1"": 0, ""avg_distance"": 5.0990195135927845, ""tp"": 0, ""fp"": 1, ""fn"": 1}, ""tv"": {""precision"": 0.5, ""recall"": 0.5, ""f1"": 0.5, ""avg_distance"": 4.061208747436233, ""tp"": 1, ""fp"": 1, ""fn"": 1}, ""fridge"": {""precision"": 1.0, ""recall"": 0, ""f1"": 0, ""avg_distance"": 15, ""tp"": 0, ""fp"": 0, ""fn"": 1}, ""chair"": {""precision"": 0.3333333333333333, ""recall"": 0.2, ""f1"": 0.25, ""avg_distance"": 3.6169055775607952, ""tp"": 1, ""fp"": 2, ""fn"": 4}, ""trash_can"": {""precision"": 1.0, ""recall"": 0, ""f1"": 0, ""avg_distance"": 15, ""tp"": 0, ""fp"": 0, ""fn"": 1}, ""table"": {""precision"": 0.6, ""recall"": 0.5, ""f1"": 0.5454545454545454, ""avg_distance"": 3.018673747926775, ""tp"": 3, ""fp"": 2, ""fn"": 3}, ""lamp"": {""precision"": 1.0, ""recall"": 0, ""f1"": 0, ""avg_distance"": 15, ""tp"": 0, ""fp"": 0, ""fn"": 2}, ""rug"": {""precision"": 0.3333333333333333, ""recall"": 0.5, ""f1"": 0.4, ""avg_distance"": 3.2566165379829397, ""tp"": 1, ""fp"": 2, ""fn"": 1}, ""basket"": {""precision"": 1.0, ""recall"": 0, ""f1"": 0, ""avg_distance"": 15, ""tp"": 0, ""fp"": 0, ""fn"": 1}}}"
+data/ReplicaPano-frl_apartment_2_000-Scene_Info-00001/rgb.png,google/gemini-pro-1.5,1,object_counting,How many table(s) are in this room?,"<think>The provided categories include ""table"". Let's locate all instances of tables within the scene.
+
+1. There's a small coffee table in front of the sofa.
+2. There's a kitchen island near the kitchen cabinets.
+3. There's a low table in the living room area, in front of the tv and sofa.
+4. There is a long horizontal cabinet used as a TV console that is a table under the TV on the left side
+5. There is a small, black, metal, rectangular end table/nightstand near the TV console.
+
+Thus, there are five tables in the scene.</think>
+<answer>5</answer>",6,0.16666666666666663
+data/ReplicaPano-frl_apartment_2_000-Scene_Info-00001/rgb.png,google/gemini-pro-1.5,2,object_counting,How many sofa(s) are in this room?,"<think>
+The question asks the number of sofas in the room.  I can see one gray sofa in the center of the room, oriented horizontally. There are no other sofas. Thus the answer is one.
+</think>
+<answer>1</answer>",1,1
+data/ReplicaPano-frl_apartment_2_000-Scene_Info-00001/rgb.png,google/gemini-pro-1.5,3,object_counting,How many fridge(s) are in this room?,"<think>
+The provided categories are: {cabinet, window, lamp, chair, table, sofa, rug, tv, basket, trash_can, fridge}. We are looking for ""fridge"".  By carefully examining the panorama, I cannot find any object that resembles a fridge.
+</think>
+<answer>0</answer>",1,0
+data/ReplicaPano-frl_apartment_2_000-Scene_Info-00001/rgb.png,google/gemini-pro-1.5,4,object_counting,How many lamp(s) are in this room?,"<think>The question asks the number of lamps in the room. I will carefully examine the panoramic image to identify any instances of lamps. I don't see any objects that clearly resemble lamps in the conventional sense (like table lamps or floor lamps). Thus, I conclude there are no lamps present in this image.</think>
+<answer>0</answer>",2,0
+data/ReplicaPano-frl_apartment_2_000-Scene_Info-00001/rgb.png,google/gemini-pro-1.5,5,object_counting,How many basket(s) are in this room?,"<think>The image provided is a panoramic view of a room. I'm tasked with counting the number of baskets present.  I'll examine the entire panorama carefully.  I see no object that resembles a basket. Therefore, the number of baskets in this room is 0.</think>
+<answer>0</answer>",1,0
+data/ReplicaPano-frl_apartment_2_000-Scene_Info-00001/rgb.png,google/gemini-pro-1.5,6,relative_distance,"Measuring from the closest point of each object, which of these objects (sofa, window, fridge, table) is the closest to the basket in this PANORAMA?","<think>
+The question asks which of the following objects (sofa, window, fridge, table) is closest to a basket.
+
+1. **Basket:** I don't see any basket in the panorama provided.
+
+2. **Sofa:** Located in the center-right.
+3. **Window:** Not present in the provided image.
+4. **Fridge:** Not present in the provided image.
+5. **Table(s):** There are multiple tables: one in the kitchen area, a coffee table near the sofa, a small table in the corner near the sofa, a media console under the TV on the left, and a small table or stand on the left wall near the media console.
+
+Since there are not any baskets in the panorama,  I can not estimate the closest object among the proposed options.
+
+</think>
+<answer>There are no baskets in the image.</answer>",fridge,0
+data/ReplicaPano-frl_apartment_2_000-Scene_Info-00001/rgb.png,google/gemini-pro-1.5,7,relative_distance,"Measuring from the closest point of each object, which of these objects (lamp, chair, basket, fridge) is the closest to the trash_can in this PANORAMA?","<think>
+The question asks which of the following objects (lamp, chair, basket, fridge) is closest to the trash_can.
+
+1. **Identify the positioning object:** trash_can. The panorama does not contain a trash_can.
+
+2. **Identify candidate objects:** lamp, chair, basket, fridge. There are:
+    - No lamps.
+    - Three chairs at: [[5, 4], [6, 4], [8, 6]].
+    - No baskets.
+    - No fridge.
+
+Since the positioning object (trash_can) is not present, we cannot determine which of the candidate objects is closest to it.
+
+</think>
+<answer>trash_can not present</answer>",fridge,0
+data/ReplicaPano-frl_apartment_2_000-Scene_Info-00001/rgb.png,google/gemini-pro-1.5,8,relative_distance,"Measuring from the closest point of each object, which of these objects (cabinet, window, sofa, basket) is the closest to the fridge in this PANORAMA?","<think>
+The objects of interest are cabinet, window, sofa, and basket, and we want to determine which is closest to the fridge.
+
+1. **Locate the fridge:** The fridge is located in the kitchen area near the center-left part of the panorama (around coordinates [4, 4]).
+
+2. **Identify instances of queried objects:**
+   - **Cabinet:** There are multiple cabinets. Two are near the fridge in the kitchen area.  There's one in the bottom left corner ([2, 2] approximately), and one in the top right corner.
+   - **Window:** There are no windows visible in this panorama.
+   - **Sofa:** The sofa is located in the center-right portion of the panorama, further from the fridge than the kitchen cabinets.
+   - **Basket:** There aren't any baskets visible in this panorama.
+
+3. **Compare distances:** The cabinets in the kitchen are clearly closest to the fridge.  So, the closest object is Cabinet.
+
+</think>
+<answer>cabinet</answer>
+",cabinet,0
+data/ReplicaPano-frl_apartment_2_000-Scene_Info-00001/rgb.png,google/gemini-pro-1.5,9,relative_distance,"Measuring from the closest point of each object, which of these objects (trash_can, tv, lamp, window) is the closest to the basket in this PANORAMA?","<think>
+The question asks which of the listed objects (trash_can, tv, lamp, window) is closest to the basket. First, we need to locate all instances of baskets and the listed candidate objects.
+
+1. **Basket:** There are no baskets present in the scene.
+
+2. **Trash can:** There are no trash cans present in the scene.
+
+3. **TV:** There are two TVs, one on the left wall and another one on the right wall
+
+4. **Lamp:** There are no lamps in the scene.
+
+5. **Window:** There are no windows present in the scene.
+
+Since there are no baskets in the scene the question is ill-posed.  There is no correct answer.
+</think>
+<answer>None of the listed objects are closest as there is no basket in the image.</answer>",trash_can,0
+data/ReplicaPano-frl_apartment_2_000-Scene_Info-00001/rgb.png,google/gemini-pro-1.5,10,relative_distance,"Measuring from the closest point of each object, which of these objects (fridge, lamp, rug, table) is the closest to the basket in this PANORAMA?","<think>
+The objects we need to consider are fridge, lamp, rug, and table. We also need to locate the basket.
+
+1. **Basket:** There are no baskets present in the scene.
+
+2. **Fridge:** There is no fridge in the scene.
+
+3. **Lamp:** There are no lamps in the scene.
+
+4. **Rug:** There are three rugs: one in the front-left living room area, one near the central seating area with a yellow pattern, and one close to the right-side living room.
+
+5. **Table:** There are four tables: a coffee table in the front-left living room area, a table in the kitchen, a circular table in the  central seating area and one on the far right-hand side of the panorama where two chairs are placed. 
+
+Since there are no baskets present, we can't determine which of the provided objects is closest to it.
+</think>
+<answer>There are no baskets.</answer>",lamp,0
+data/ReplicaPano-frl_apartment_2_000-Scene_Info-00001/rgb.png,google/gemini-pro-1.5,11,relative_direction,"If I am standing by the fridge and facing the closest sofa, is the closest table to my front, back, left, right, front-left, front-right, back-left, or back-right in this PANORAMA?","<think>
+1. **Positioning Object:** I am standing by the fridge. The fridge is located in the top-middle section of the panorama (around coordinates [4, 4]).
+
+2. **Orientation:** I am facing the closest sofa. The closest sofa is in the center-right area of the panorama (around coordinates [6, 5]). This sets my forward direction towards the sofa.
+
+3. **Target Objects:** The question asks about the closest table. There are several tables in the scene:
+    - Table 1 (coffee table): Located in front of the sofa (around coordinates [5, 5]).
+    - Table 2 (kitchen island):  Located near the fridge (around coordinates [5, 3]).
+    - Table 3 (dining table): Located further right from the sofa (around coordinates [8, 7]).
+    - Table 4: In front of the TV: located on the leftmost wall (around coordinates [2, 1])
+    - Table 5: To the right of the TV: located on the leftmost wall (around coordinates [2, 2])
+
+4. **Relative Distances & Directions:**
+    - Table 1 (coffee table) is directly in front of the sofa and thus in front of me.
+    - Table 2 (kitchen island) is very close to the fridge (where I'm standing). It appears slightly to my left since I'm facing the sofa.
+    - Table 3 (dining table)  is further away and to the right.
+    - Table 4 and Table 5 are far to my left and slightly to the back given the panorama's wraparound nature.
+
+5. **Closest Table:** Since I'm standing *by* the fridge, Table 2 (kitchen island) would be the closest to me.
+6. **Directional Relationship** Table 2 kitchen island would be to my front and slightly to my left. Given ""left"" is not one of the options, ""front-left"" seems to be the correct answer.
+
+</think>
+
+<answer>Front-Left</answer>
+",Front Right,0
+data/ReplicaPano-frl_apartment_2_000-Scene_Info-00001/rgb.png,google/gemini-pro-1.5,13,relative_direction,"If I am standing by the trash_can and facing the closest lamp, is the closest sofa to my front, back, left, right, front-left, front-right, back-left, or back-right in this PANORAMA?","<think>
+The question asks about the location of the closest sofa relative to a person standing by the trash can and facing the nearest lamp.
+
+1. **Locate the trash can:** There is no trash can present in the scene.
+
+2. **Locate the closest lamp:** There are no lamps identified in the scene.
+
+3. Since the positioning objects (trash can and lamp) are not present in the scene, the relative direction of the closest sofa cannot be determined.
+
+</think>
+<answer>There is no trash can or lamp in the scene.</answer>
+",Front Right,0
+data/ReplicaPano-frl_apartment_2_000-Scene_Info-00001/rgb.png,google/gemini-pro-1.5,14,relative_direction,"If I am standing by the fridge and facing the closest rug, is the closest trash_can to my front, back, left, right, front-left, front-right, back-left, or back-right in this PANORAMA?","<think>
+The prompt asks for the location of the closest trash_can relative to a person standing by the fridge and facing the closest rug.
+
+1. **Locate the fridge:** The fridge is not present in the image. However, we can infer it is at the position the person is standing at.
+2. **Locate the closest rug:** The person is standing next to two rugs: one next to the two coffee tables in the center of the image ([2,2]) or [6,5] location within the grid), and another one at the right side under the dining table and chairs ([9,7] location in the grid) . Here ""closest"" implies minimal distance, so the rug placed near the coffee tables are the closest one or it would be [2,2].
+3. **Determine the facing direction:** The person is facing the closest rug.
+4. **Locate the trash_can:**  There is no trash_can in the provided image or panorama. 
+
+Since there is no trash_can in the image, we cannot determine its position relative to the person.
+
+</think>
+<answer>There is no trash_can in the image.</answer>
+",Front Right,0
+data/ReplicaPano-frl_apartment_2_000-Scene_Info-00001/rgb.png,google/gemini-pro-1.5,15,relative_direction,"If I am standing by the fridge and facing the closest window, is the closest trash_can to my front, back, left, right, front-left, front-right, back-left, or back-right in this PANORAMA?","<think>
+1. **Positioning:** I am standing by the fridge. There is no fridge in this panorama. Thus, I can't determine my position correctly.
+2. **Orientation**: I am facing the closest window. There are no windows in this panorama. Thus, I can't determine my orientation.
+3. **Target Object**: I am looking for the closest trash_can. There are no trash_cans in this panorama.
+
+Since I can't determine my position and orientation, and no trash_can is present, I cannot determine the direction of the nearest trash_can.
+
+</think>
+<answer>There is no fridge, window, nor trash_can in this panorama.</answer>",Front,0

@@ -1,0 +1,150 @@
+image_id,model,turn_id,skills_tested,question,model_answer,ground_truth,score
+data/ReplicaPano-office_3_000-Scene_Info-00018/rgb.png,google/gemini-pro-1.5,0,cognitive_map,"[Task] This PANORAMA captures an indoor scene. Your objective is to identify specific objects within the panorama, understand the spatial arrangement of the scene, and estimate the center point of each object, assuming the entire scene is represented by a 10x10 grid. [Rule] 1. We provide the categories to care about in this scene: {window, tv, sofa, table, chair, door, trash_can}. Focus ONLY on these categories. 2. Estimate the center location of each instance within the provided categories, assuming the entire scene is represented by a 10x10 grid. 3. If a category contains multiple instances, include all of them. 4. Each object’s estimated location should accurately reflect its real position in the scene, preserving the relative spatial relationships among all objects. 5. Consider object distance from camera when positioning them. Closer objects should be placed near the center of the grid, while distant objects should be placed toward the edges. 6. If an object is partially visible or occluded, estimate its full position based on the visible parts. [Output] Present the estimated center locations for each object as a list within a dictionary. STRICTLY follow this JSON format And use INTEGERS with 10 to represent the coordinates: {""category name"": [[x_1, y_1], ...], ...}","```json
+{
+  ""window"": [[1, 8]],
+  ""tv"": [[8, 7]],
+  ""sofa"": [[9, 7]],
+  ""table"": [[5, 5], [9, 6]],
+  ""chair"": [[5, 4], [6, 4], [8, 6], [9, 4], [10, 4]],
+  ""door"": [[1, 4]],
+  ""trash_can"": [[2, 4]]
+}
+```","[[['window'], [], ['window'], ['window', 'tv'], [], ['window'], [], [], [], []], [[], [], [], [], [], ['sofa'], [], [], [], []], [[], [], ['table'], [], [], [], [], [], [], []], [[], ['sofa'], [], [], [], [], [], [], [], []], [[], [], [], [], ['chair'], ['sofa'], [], [], [], []], [[], [], [], [], [], [], [], [], [], []], [[], ['chair'], ['chair'], ['chair'], ['chair'], [], [], [], [], []], [[], ['chair'], ['chair'], ['chair', 'table'], ['chair'], [], [], [], [], []], [['door'], [], [], [], [], [], [], [], [], []], [['door'], ['trash_can'], ['trash_can'], [], [], [], [], [], [], []]]","{""overall"": {""precision"": 0.45454545454545453, ""recall"": 0.21739130434782608, ""f1"": 0.29411764705882354, ""avg_distance"": 3.8892140357963956, ""tp"": 5, ""fp"": 6, ""fn"": 18, ""chair_s"": 0, ""chair_i"": 0.0, ""chair_instance"": 0.0, ""hallucinated_classes"": []}, ""per_class"": {""window"": {""precision"": 1.0, ""recall"": 0.25, ""f1"": 0.4, ""avg_distance"": 1.4142135623730951, ""tp"": 1, ""fp"": 0, ""fn"": 3}, ""sofa"": {""precision"": 0.0, ""recall"": 0.0, ""f1"": 0, ""avg_distance"": 5.830951894845301, ""tp"": 0, ""fp"": 1, ""fn"": 3}, ""tv"": {""precision"": 0.0, ""recall"": 0.0, ""f1"": 0, ""avg_distance"": 8.06225774829855, ""tp"": 0, ""fp"": 1, ""fn"": 1}, ""door"": {""precision"": 0.0, ""recall"": 0.0, ""f1"": 0, ""avg_distance"": 8.602325267042627, ""tp"": 0, ""fp"": 1, ""fn"": 2}, ""chair"": {""precision"": 0.75, ""recall"": 0.3333333333333333, ""f1"": 0.46153846153846156, ""avg_distance"": 1.4125703849682212, ""tp"": 3, ""fp"": 1, ""fn"": 6}, ""trash_can"": {""precision"": 0.0, ""recall"": 0.0, ""f1"": 0, ""avg_distance"": 7.615773105863909, ""tp"": 0, ""fp"": 1, ""fn"": 2}, ""table"": {""precision"": 0.5, ""recall"": 0.5, ""f1"": 0.5, ""avg_distance"": 2.802775637731995, ""tp"": 1, ""fp"": 1, ""fn"": 1}}}"
+data/ReplicaPano-office_3_000-Scene_Info-00018/rgb.png,google/gemini-pro-1.5,1,object_counting,How many trash_can(s) are in this room?,"<think>
+The provided categories are {window, tv, sofa, table, chair, door, trash_can}. I need to count the number of trash cans in the image. Upon close inspection of the panorama and referencing the provided zoomed-in views, I can identify one trash can next to the door in the bottom left part of the panorama corresponding roughly to coordinates [2, 4] in the 10x10 grid. There are no other instances of trash cans visible.
+</think>
+<answer>1</answer>",2,1
+data/ReplicaPano-office_3_000-Scene_Info-00018/rgb.png,google/gemini-pro-1.5,2,object_counting,How many chair(s) are in this room?,"<think>
+The provided JSON data lists the chair instances and their locations in the panorama:
+- chair 1: [5, 4]
+- chair 2: [6, 4]
+- chair 3: [8, 6]
+- chair 4: [9, 4]
+- chair 5: [10, 4]
+
+Therefore, there are 5 chairs in the room.
+</think>
+<answer>5</answer>",9,0.11111111111111116
+data/ReplicaPano-office_3_000-Scene_Info-00018/rgb.png,google/gemini-pro-1.5,3,object_counting,How many table(s) are in this room?,"<think>
+The provided JSON data lists the objects detected in the room and their estimated center locations. The entry for ""table"" is:
+
+```json
+""table"": [[5, 5], [9, 6]]
+```
+
+This shows two sets of coordinates, indicating two instances of ""table"" were found.
+</think>
+<answer>2</answer>",2,0.4
+data/ReplicaPano-office_3_000-Scene_Info-00018/rgb.png,google/gemini-pro-1.5,4,object_counting,How many window(s) are in this room?,"<think>
+The provided categories to search for are window, tv, sofa, table, chair, door, trash_can. We are asked to count the number of windows.
+
+Looking at the scene, there is one window visible, near the top-left corner of the panorama.  It is visible through the doorway.
+</think>
+<answer>1</answer>",4,0.25
+data/ReplicaPano-office_3_000-Scene_Info-00018/rgb.png,google/gemini-pro-1.5,5,object_counting,How many door(s) are in this room?,"<think>
+The provided categories are {window, tv, sofa, table, chair, door, trash_can}.  I need to count the number of doors. The  panorama shows a double door with glass panes partially obscured by the room's dark wall color making it hard to tell if the doors are shut or open. This constitutes one doorway or one set of doors.
+</think>
+<answer>1</answer>",2,0.5
+data/ReplicaPano-office_3_000-Scene_Info-00018/rgb.png,google/gemini-pro-1.5,6,relative_distance,"Measuring from the closest point of each object, which of these objects (window, chair, sofa, table) is the closest to the tv in this PANORAMA?","<think>
+The question asks which of the following objects (window, chair, sofa, table) is closest to the TV.
+
+1. **Locate the TV:** The TV is on the right side of the panorama.
+
+2. **Locate the candidate objects:**
+    - **Window:** The window is on the far left side.
+    - **Chair:** There are multiple chairs. One blue chair is near the TV. Other black chairs are at the table in the front.
+    - **Sofa:** The sofa is situated against the same wall as the TV, to its right.
+    - **Table:** There's a small table in front of the sofa, very close to the TV. There is also a large table that stretches across the foreground, but this table is farther from the TV than all the other candidate objects. 
+
+3. **Compare distances:** Among the given candidate options (excluding the black chairs), window is the farthest in front, and the table in front of the sofa is the closest to the TV.
+
+Therefore, the table in front of the sofa is closest to the TV.
+</think>
+<answer>table</answer>
+",window,0
+data/ReplicaPano-office_3_000-Scene_Info-00018/rgb.png,google/gemini-pro-1.5,7,relative_distance,"Measuring from the closest point of each object, which of these objects (door, sofa, trash_can, chair) is the closest to the tv in this PANORAMA?","<think>
+The question asks which of the following objects (door, sofa, trash_can, chair) is closest to the tv.
+
+1. **Locate the TV:** The TV is on the right side of the panorama, against the orange wall.
+
+2. **Locate the candidate objects:**
+    - **Door:** The door is on the left side of the panorama, near the dark gray wall.
+    - **Sofa:** The sofa is close to the TV, also against the orange wall, to the right of the TV.
+    - **Trash can:** The trash can is on the left side, near the dark gray wall, close to the door.
+    - **Chairs:** There are multiple chairs. Two are close to the table on the left side and three chairs are near the table on the right side. The chair closest to the TV is one of the three chairs positioned close to the TV. 
+
+3. **Compare distances:**  Visually comparing the distances of the objects to the TV, it's clear that the sofa is the closest. The chair near the sofa is the next closest, followed by the trash can and then the door.
+
+</think>
+<answer>sofa</answer>
+",sofa,0
+data/ReplicaPano-office_3_000-Scene_Info-00018/rgb.png,google/gemini-pro-1.5,8,relative_distance,"Measuring from the closest point of each object, which of these objects (door, window, trash_can, sofa) is the closest to the tv in this PANORAMA?","<think>
+The question asks which of the following objects (door, window, trash_can, sofa) is closest to the TV.
+
+1. **Locate the TV:** The TV is on the right side of the panorama, against the reddish-orange wall.
+
+2. **Locate the candidate objects:**
+    - **Door:** The door is on the left side of the panorama, near the dark gray/black wall.
+    - **Window:** The window is above the right side of the door.
+    - **Trash can:** The trash can is next to the door on the left-hand side near the dark wall.
+    - **Sofa:** The sofa is also near the right side, positioned in front of the tv and close to the orange wall.
+
+3. **Compare distances:**  Judging by the perspective and layout, the sofa is clearly the closest to the TV. The other objects (door, window, trash can) are on the opposite side of the room.
+
+</think>
+<answer>sofa</answer>
+",window,0
+data/ReplicaPano-office_3_000-Scene_Info-00018/rgb.png,google/gemini-pro-1.5,9,relative_distance,"Measuring from the closest point of each object, which of these objects (door, table, sofa, window) is the closest to the tv in this PANORAMA?","<think>
+The question asks which of the objects (door, table, sofa, window) is closest to the TV.
+
+1. **Locate the TV:** The TV is on the right side of the panorama, against the orange wall.
+
+2. **Locate the candidate objects:**
+    - **Door:** The door is on the left side of the panorama, near the dark gray wall.
+    - **Table (1):** The large table is in the foreground, spanning the bottom of the panorama.  It's closer to the camera than most objects.
+    - **Table (2):** The small coffee table is located directly in front of the sofa and close to the TV.
+    - **Sofa:** The sofa is on the right side of the panorama, also near the orange wall, immediately next to the TV.
+    - **Window:** The window is on the right side of the panorama, near the orange wall, but further back from the sofa and the TV.
+
+3. **Compare distances:** From the image, it's evident that the sofa is adjacent to the TV, and the other objects are much further of the sofa. The coffee table might be somewhat close to the TV, but only the sofa is directly adjacent to the tv. Thus, the sofa must be the closest object to the TV among the given object candidates.
+
+</think>
+<answer>sofa</answer>",window,0
+data/ReplicaPano-office_3_000-Scene_Info-00018/rgb.png,google/gemini-pro-1.5,10,relative_distance,"Measuring from the closest point of each object, which of these objects (door, window, sofa, chair) is the closest to the tv in this PANORAMA?","<think>
+The question asks which of the door, window, sofa, or chair is closest to the TV.
+
+1. **TV:** Located on the right side of the image, against the reddish-orange wall.
+
+2. **Door:** Located on the left side near the darkened area, quite far from the TV.
+
+3. **Window:** The only window visible is above and to the right of the door, still far from the TV.
+
+4. **Sofa:** Positioned near the TV, slightly to its right and a bit closer to the camera.
+
+5. **Chair:** There are multiple chairs. One blue chair sits between the sofa and the TV, closer to the TV than the sofa. Other chairs are at the conference table, much farther away.
+
+Comparing distances, the blue chair right next to the TV is clearly the closest.
+</think>
+<answer>chair</answer>
+",window,0
+data/ReplicaPano-office_3_000-Scene_Info-00018/rgb.png,google/gemini-pro-1.5,14,relative_direction,"If I am standing by the tv and facing the closest table, is the closest chair to my front, back, left, right, front-left, front-right, back-left, or back-right in this PANORAMA?","<think>
+1. **Positioning Object:** I am standing by the TV. The TV is located at coordinates [8, 7].
+2. **Facing Direction:** I am facing the closest table. There are two tables in the panorama. The first table is located at coordinates [5, 5] and the second table is at coordinates [9, 6].  The closest table to the TV is the one at [9, 6]. This direction is diagonally right and slightly ahead of the starting position by the TV.
+3. **Target Object Candidates:** I am searching for the chair closest to me in the context of facing the second table. The five chairs are located at [5, 4], [6, 4], [8, 6], [9, 4], and [10, 4].
+4. **Closest Chair Determination:** The closest chair to my position at the TV while facing the closer table is the one at coordinates [8, 6]. 
+
+5. **Relative Direction:** Since I am facing the table at [9, 6], and the chair at [8,6] shares the same y-coordinate (depth-wise) as the table being faced, but is one unit to the left (x-axis), the chair would be positioned to my left side.
+
+</think>
+<answer>Left</answer>
+",Front Left,0
+data/ReplicaPano-office_3_000-Scene_Info-00018/rgb.png,google/gemini-pro-1.5,15,relative_direction,"If I am standing by the tv and facing the closest chair, is the closest sofa to my front, back, left, right, front-left, front-right, back-left, or back-right in this PANORAMA?","<think>
+1. **Positioning Object:** I am standing by the TV. The TV is located at coordinates [8, 7].
+2. **Facing Direction:** I am facing the closest chair. The chairs are located at [[5, 4], [6, 4], [8, 6], [9, 4], [10, 4]]. The closest chair to the TV is the one at [8, 6].  Since the chair at [8,6] has equal x coordinate as the tv which means that facing is perpendicular to the camera capturing the rightmost section of the image, I infer facing to be ""south"" relative to the captured image and the walls in this area.
+3. **Target Object:** The closest sofa. The sofa is located at [9, 7].
+4. **Spatial Relationship:** The sofa (9, 7) is to the right and slightly behind the TV (8, 7) given that it is to a greater x coordinate. Given that the TV is at (8, 7) and the reference chair is at (8, 6), this implies I am facing south relative to the tv image section and the southern wall. From the perspective of someone south of the TV, the sofa is diagonally positioned.
+5. It is positioned behind and to right if south facing is used from TV relative to the reference chair at (8, 6) which I am facing. Thus from the tv position facing the chair, the direction to the sofa is slightly back and to the right.
+
+</think>
+<answer>Back-Right</answer>
+",Front Left,0

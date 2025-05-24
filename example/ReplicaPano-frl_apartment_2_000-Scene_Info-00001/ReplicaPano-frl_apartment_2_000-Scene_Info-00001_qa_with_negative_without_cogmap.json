@@ -1,0 +1,100 @@
+{
+  "image_id": "data/ReplicaPano-frl_apartment_2_000-Scene_Info-00001/rgb.png",
+  "pre_prompt": "",
+  "conversation": [
+    {
+      "turn_id": 1,
+      "question": "How many pillow(s) are in this room?",
+      "answer": "0",
+      "skills_tested": "object_counting"
+    },
+    {
+      "turn_id": 2,
+      "question": "How many fridge(s) are in this room?",
+      "answer": "1",
+      "skills_tested": "object_counting"
+    },
+    {
+      "turn_id": 3,
+      "question": "How many picture(s) are in this room?",
+      "answer": "0",
+      "skills_tested": "object_counting"
+    },
+    {
+      "turn_id": 4,
+      "question": "How many sofa(s) are in this room?",
+      "answer": "1",
+      "skills_tested": "object_counting"
+    },
+    {
+      "turn_id": 5,
+      "question": "How many mirror(s) are in this room?",
+      "answer": "0",
+      "skills_tested": "object_counting"
+    },
+    {
+      "turn_id": 6,
+      "question": "Measuring from the closest point of each object, which of these objects (rug, sink, picture, bottom_cabinet) is the closest to the trash_can in this PANORAMA?",
+      "answer": "rug",
+      "skills_tested": "relative_distance"
+    },
+    {
+      "turn_id": 7,
+      "question": "Measuring from the closest point of each object, which of these objects (chair, bottom_cabinet, bed, pillow) is the closest to the trash_can in this PANORAMA?",
+      "answer": "chair",
+      "skills_tested": "relative_distance"
+    },
+    {
+      "turn_id": 8,
+      "question": "Measuring from the closest point of each object, which of these objects (door, rug, pillow, basket) is the closest to the sofa in this PANORAMA?",
+      "answer": "rug",
+      "skills_tested": "relative_distance"
+    },
+    {
+      "turn_id": 9,
+      "question": "Measuring from the closest point of each object, which of these objects (door, sink, cabinet, shelf) is the closest to the basket in this PANORAMA?",
+      "answer": "cabinet",
+      "skills_tested": "relative_distance"
+    },
+    {
+      "turn_id": 10,
+      "question": "Measuring from the closest point of each object, which of these objects (chair, carpet, fridge, rug) is the closest to the basket in this PANORAMA?",
+      "answer": "chair",
+      "skills_tested": "relative_distance"
+    },
+    {
+      "turn_id": 11,
+      "question": "If I am standing by the trash_can and facing the closest bed, is the closest picture to my front, back, left, right, front-left, front-right, back-left, or back-right in this PANORAMA?",
+      "answer": "The orienting object or querying object is not found in the picture.",
+      "skills_tested": "relative_direction"
+    },
+    {
+      "turn_id": 12,
+      "question": "If I am standing by the trash_can and facing the closest sink, is the closest door to my front, back, left, right, front-left, front-right, back-left, or back-right in this PANORAMA?",
+      "answer": "The orienting object or querying object is not found in the picture.",
+      "skills_tested": "relative_direction"
+    },
+    {
+      "turn_id": 13,
+      "question": "If I am standing by the basket and facing the closest pillow, is the closest cabinet to my front, back, left, right, front-left, front-right, back-left, or back-right in this PANORAMA?",
+      "answer": "The orienting object or querying object is not found in the picture.",
+      "skills_tested": "relative_direction"
+    },
+    {
+      "turn_id": 14,
+      "question": "If I am standing by the sofa and facing the closest bottom_cabinet, is the closest trash_can to my front, back, left, right, front-left, front-right, back-left, or back-right in this PANORAMA?",
+      "answer": "The orienting object or querying object is not found in the picture.",
+      "skills_tested": "relative_direction"
+    },
+    {
+      "turn_id": 15,
+      "question": "If I am standing by the trash_can and facing the closest bottom_cabinet, is the closest shelf to my front, back, left, right, front-left, front-right, back-left, or back-right in this PANORAMA?",
+      "answer": "The orienting object or querying object is not found in the picture.",
+      "skills_tested": "relative_direction"
+    }
+  ],
+  "metadata": {
+    "creation_date": "2025-04-23",
+    "version": "1.0"
+  }
+}

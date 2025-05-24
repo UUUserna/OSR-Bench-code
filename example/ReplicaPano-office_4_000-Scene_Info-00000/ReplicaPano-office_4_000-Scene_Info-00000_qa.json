@@ -1,0 +1,267 @@
+{
+  "image_id": "data/ReplicaPano-office_4_000-Scene_Info-00000/rgb.png",
+  "pre_prompt": "",
+  "conversation": [
+    {
+      "turn_id": 0,
+      "question": "[Task] This PANORAMA captures an indoor scene. Your objective is to identify specific objects within the panorama, understand the spatial arrangement of the scene, and estimate the center point of each object, assuming the entire scene is represented by a 10x10 grid. [Rule] 1. We provide the categories to care about in this scene: {sofa, window, door, trash_can, chair, tv, wall_clock, table}. Focus ONLY on these categories. 2. Estimate the center location of each instance within the provided categories, assuming the entire scene is represented by a 10x10 grid. 3. If a category contains multiple instances, include all of them. 4. Each object’s estimated location should accurately reflect its real position in the scene, preserving the relative spatial relationships among all objects. 5. Consider object distance from camera when positioning them. Closer objects should be placed near the center of the grid, while distant objects should be placed toward the edges. 6. If an object is partially visible or occluded, estimate its full position based on the visible parts. [Output] Present the estimated center locations for each object as a list within a dictionary. STRICTLY follow this JSON format And use INTEGERS with 10 to represent the coordinates: {\"category name\": [[x_1, y_1], ...], ...}",
+      "answer": [
+        [
+          [],
+          [],
+          [
+            "sofa"
+          ],
+          [],
+          [],
+          [],
+          [
+            "sofa"
+          ],
+          [],
+          [],
+          [
+            "window",
+            "door"
+          ]
+        ],
+        [
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          []
+        ],
+        [
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [
+            "trash_can"
+          ]
+        ],
+        [
+          [
+            "chair"
+          ],
+          [],
+          [
+            "chair"
+          ],
+          [
+            "chair"
+          ],
+          [
+            "chair"
+          ],
+          [],
+          [],
+          [],
+          [],
+          []
+        ],
+        [
+          [],
+          [],
+          [],
+          [],
+          [],
+          [
+            "chair"
+          ],
+          [],
+          [],
+          [],
+          []
+        ],
+        [
+          [
+            "tv",
+            "wall_clock"
+          ],
+          [],
+          [],
+          [
+            "table"
+          ],
+          [],
+          [],
+          [],
+          [],
+          [],
+          []
+        ],
+        [
+          [
+            "chair"
+          ],
+          [],
+          [
+            "chair"
+          ],
+          [
+            "chair"
+          ],
+          [
+            "chair"
+          ],
+          [],
+          [],
+          [],
+          [],
+          [
+            "window"
+          ]
+        ],
+        [
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          []
+        ],
+        [
+          [
+            "chair"
+          ],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [
+            "table"
+          ],
+          [
+            "chair"
+          ],
+          []
+        ],
+        [
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          []
+        ]
+      ],
+      "skills_tested": "cognitive_map"
+    },
+    {
+      "turn_id": 1,
+      "question": "How many trash_can(s) are in this room?",
+      "answer": "1",
+      "skills_tested": "object_counting"
+    },
+    {
+      "turn_id": 2,
+      "question": "How many wall_clock(s) are in this room?",
+      "answer": "1",
+      "skills_tested": "object_counting"
+    },
+    {
+      "turn_id": 3,
+      "question": "How many sofa(s) are in this room?",
+      "answer": "2",
+      "skills_tested": "object_counting"
+    },
+    {
+      "turn_id": 4,
+      "question": "How many table(s) are in this room?",
+      "answer": "2",
+      "skills_tested": "object_counting"
+    },
+    {
+      "turn_id": 5,
+      "question": "How many door(s) are in this room?",
+      "answer": "1",
+      "skills_tested": "object_counting"
+    },
+    {
+      "turn_id": 6,
+      "question": "Measuring from the closest point of each object, which of these objects (trash_can, window, table, chair) is the closest to the wall_clock in this PANORAMA?",
+      "answer": "chair",
+      "skills_tested": "relative_distance"
+    },
+    {
+      "turn_id": 7,
+      "question": "Measuring from the closest point of each object, which of these objects (tv, door, window, table) is the closest to the wall_clock in this PANORAMA?",
+      "answer": "tv",
+      "skills_tested": "relative_distance"
+    },
+    {
+      "turn_id": 8,
+      "question": "Measuring from the closest point of each object, which of these objects (door, sofa, window, tv) is the closest to the wall_clock in this PANORAMA?",
+      "answer": "tv",
+      "skills_tested": "relative_distance"
+    },
+    {
+      "turn_id": 9,
+      "question": "Measuring from the closest point of each object, which of these objects (table, chair, window, tv) is the closest to the wall_clock in this PANORAMA?",
+      "answer": "tv",
+      "skills_tested": "relative_distance"
+    },
+    {
+      "turn_id": 10,
+      "question": "Measuring from the closest point of each object, which of these objects (sofa, table, tv, wall_clock) is the closest to the trash_can in this PANORAMA?",
+      "answer": "sofa",
+      "skills_tested": "relative_distance"
+    },
+    {
+      "turn_id": 11,
+      "question": "If I am standing by the trash_can and facing the closest sofa, is the closest wall_clock to my front, back, left, right, front-left, front-right, back-left, or back-right in this PANORAMA?",
+      "answer": "Front Left",
+      "skills_tested": "relative_direction"
+    },
+    {
+      "turn_id": 12,
+      "question": "If I am standing by the wall_clock and facing the closest trash_can, is the closest sofa to my front, back, left, right, front-left, front-right, back-left, or back-right in this PANORAMA?",
+      "answer": "Front Left",
+      "skills_tested": "relative_direction"
+    },
+    {
+      "turn_id": 13,
+      "question": "If I am standing by the wall_clock and facing the closest door, is the closest table to my front, back, left, right, front-left, front-right, back-left, or back-right in this PANORAMA?",
+      "answer": "Front Right",
+      "skills_tested": "relative_direction"
+    },
+    {
+      "turn_id": 14,
+      "question": "If I am standing by the door and facing the closest table, is the closest window to my front, back, left, right, front-left, front-right, back-left, or back-right in this PANORAMA?",
+      "answer": "",
+      "skills_tested": "relative_direction"
+    },
+    {
+      "turn_id": 15,
+      "question": "If I am standing by the door and facing the closest chair, is the closest wall_clock to my front, back, left, right, front-left, front-right, back-left, or back-right in this PANORAMA?",
+      "answer": "Front Right",
+      "skills_tested": "relative_direction"
+    }
+  ],
+  "metadata": {
+    "creation_date": "2025-04-23",
+    "version": "1.0"
+  }
+}

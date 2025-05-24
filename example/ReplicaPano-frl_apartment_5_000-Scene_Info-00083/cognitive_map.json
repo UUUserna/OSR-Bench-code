@@ -1,0 +1,212 @@
+{
+    "cognitive_map": [
+        [
+            [
+                "cabinet"
+            ],
+            [
+                "chair",
+                "window"
+            ],
+            [
+                "table",
+                "table"
+            ],
+            [
+                "window"
+            ],
+            [
+                "chair",
+                "window"
+            ],
+            [
+                "table",
+                "chair",
+                "rug"
+            ],
+            [
+                "chair",
+                "window"
+            ],
+            [],
+            [
+                "window"
+            ],
+            []
+        ],
+        [
+            [
+                "tv",
+                "cabinet"
+            ],
+            [
+                "rug"
+            ],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            []
+        ],
+        [
+            [],
+            [
+                "sofa"
+            ],
+            [
+                "table"
+            ],
+            [],
+            [
+                "table",
+                "chair",
+                "chair"
+            ],
+            [],
+            [],
+            [],
+            [],
+            []
+        ],
+        [
+            [],
+            [],
+            [
+                "door"
+            ],
+            [],
+            [],
+            [],
+            [
+                "cabinet"
+            ],
+            [
+                "door"
+            ],
+            [],
+            [
+                "door"
+            ]
+        ],
+        [
+            [],
+            [],
+            [],
+            [
+                "trash_can"
+            ],
+            [],
+            [
+                "rug"
+            ],
+            [],
+            [],
+            [],
+            [
+                "door",
+                "rug"
+            ]
+        ],
+        [
+            [],
+            [],
+            [],
+            [
+                "cabinet",
+                "fridge"
+            ],
+            [
+                "sink",
+                "lamp"
+            ],
+            [
+                "cabinet",
+                "cabinet"
+            ],
+            [
+                "box",
+                "trash_can"
+            ],
+            [
+                "cabinet",
+                "picture"
+            ],
+            [
+                "curtain",
+                "basket"
+            ],
+            [
+                "door"
+            ]
+        ],
+        [
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            []
+        ],
+        [
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            []
+        ],
+        [
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            []
+        ],
+        [
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            []
+        ]
+    ],
+    "class_count": {
+        "cabinet": 7,
+        "chair": 6,
+        "window": 5,
+        "table": 5,
+        "rug": 4,
+        "tv": 1,
+        "sofa": 1,
+        "door": 5,
+        "trash_can": 2,
+        "fridge": 1,
+        "sink": 1,
+        "lamp": 1,
+        "box": 1,
+        "picture": 1,
+        "curtain": 1,
+        "basket": 1
+    }
+}
