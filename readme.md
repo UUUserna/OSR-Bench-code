@@ -79,7 +79,7 @@ These commands will:
 - Process QA files with suffix 'qa'
 - Use vanilla prompt type for evaluation
 
-The first command uses Google's Gemini-Pro 1.5 model and vanilla prompt type.
+The first command uses Google's Gemini-Pro 1.5 model.
 The second command uses a local LLaVA model with specified path, device, and GPU type.
 
 ## License
