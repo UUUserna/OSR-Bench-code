@@ -133,26 +133,27 @@ def save_results_to_csv(results: List[Dict], output_file: str):
 
 def get_model_display_name(model_type, model_path):
     """获取模型显示名称"""
-    if model_type == "qwen":
-        return "Qwen2.5-VL-72B-Instruct"
-    elif model_type == "llama":
-        return "Llama-3.2-90B-Vision-Instruct"
-    elif model_type == "deepseekvl":
-        if "small" in model_path.lower():
-            return "DeepSeek-VL2-Small"
-        else:
-            return "DeepSeek-VL2"
-    elif model_type == "janus":
-        return "Janus-Pro-7B"
-    elif model_type == "internvl":
-        return "InternVL2_5-78B"
-    elif model_type == "llava":
-        if "v1.5-13b" in model_path.lower():
-            return "LLaVA-v1.5-13B"
-        else:
-            return "LLaVA"
-    else:
-        return model_path.split("/")[-1]
+    # if model_type == "qwen":
+    #     return "Qwen2.5-VL-72B-Instruct"
+    # elif model_type == "llama":
+    #     return "Llama-3.2-90B-Vision-Instruct"
+    # elif model_type == "deepseekvl":
+    #     if "small" in model_path.lower():
+    #         return "DeepSeek-VL2-Small"
+    #     else:
+    #         return "DeepSeek-VL2"
+    # elif model_type == "janus":
+    #     return "Janus-Pro-7B"
+    # elif model_type == "internvl":
+    #     return "InternVL2_5-78B"
+    # elif model_type == "llava":
+    #     if "v1.5-13b" in model_path.lower():
+    #         return "LLaVA-v1.5-13B"
+    #     else:
+    #         return "LLaVA"
+    # else:
+    #     return model_path.split("/")[-1]
+    return model_path.split("/")[-1]
 
 
 def find_image_path(image_id, json_path, image_base_dir):
@@ -248,7 +249,7 @@ def run_vqa_test(
     # 获取模型特定的消息准备和生成函数
     prepare_message = generate_module.prepare_message
     
-    if model_type in ["deepseekvl", "janus", "internvl"]:
+    if model_type in ["deepseekvl", "janus", "internvl", "llava"]:
         generate_func = lambda m, p, t, msg: generate_module.generate(m, p, t, msg, device)
     else:
         generate_func = lambda m, p, msg: generate_module.generate(m, p, msg, device)
@@ -269,7 +270,7 @@ def run_vqa_test(
         
         # 运行模型获取第一轮回答
         try:
-            if model_type in ["deepseekvl", "janus", "internvl"]:
+            if model_type in ["deepseekvl", "janus", "internvl", "llava"]:
                 first_turn_response = generate_func(model, processor, tokenizer, first_messages)
             else:
                 first_turn_response = generate_func(model, processor, first_messages)
@@ -335,7 +336,7 @@ def run_vqa_test(
                 messages = prepare_message(full_image_path, full_query)
 
             # 运行模型获取回答
-            if model_type in ["deepseekvl", "janus", "internvl"]:
+            if model_type in ["deepseekvl", "janus", "internvl", "llava"]:
                 model_answer = generate_func(model, processor, tokenizer, messages)
             else:
                 model_answer = generate_func(model, processor, messages)
@@ -487,6 +488,7 @@ def load_model_by_type(
         )
         model_info["model"] = model
         model_info["processor"] = processor
+        model_info["tokenizer"] = tokenizer
 
     else:
         raise ValueError(f"不支持的模型类型: {model_type}")

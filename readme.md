@@ -29,12 +29,7 @@ OSR-Bench
 └─example/                 # Example data
 ```
 
-## Dataset Download
-
-The complete dataset is available at:
-https://huggingface.co/datasets/UUUserna/OSR-Bench
-
-## Benchmark Structure
+## Dataset Structure
 
 Each scene folder contains the following files:
 - cognitive_map.json: Cognitive map data
@@ -55,7 +50,7 @@ We convert all json files to csv for dataset hosting strategy
 
 ### Example Command
 
-To run evaluation using Gemini-Pro model (you need to fill your api-key in `api_model_run.py`):
+To run evaluation using proprietary model (you need to fill your api-key in `api_model_run.py`):
 ```bash
 python evaluation/model_run/api_model_run.py \
     --input_dir ./example \
@@ -65,12 +60,27 @@ python evaluation/model_run/api_model_run.py \
     --prompt-type vanilla
 ```
 
-This command will:
+To run evaluation using a LOCAL open-sourse model:
+```bash
+python evaluation/model_run/open_model_run.py \
+    --input_dir ./example \
+    --output_dir ./result/example \
+    --model_path models/llava-v1.5-13b \
+    --model_type llava \
+    --json-suffix qa \
+    --prompt-type vanilla \
+    --device cuda \
+    --gpu_type A40
+```
+
+These commands will:
 - Use example data from `./example` directory
 - Save results to `./result` directory
-- Use Google's Gemini-Pro 1.5 model
 - Process QA files with suffix 'qa'
 - Use vanilla prompt type for evaluation
+
+The first command uses Google's Gemini-Pro 1.5 model and vanilla prompt type.
+The second command uses a local LLaVA model with specified path, device, and GPU type.
 
 ## License
 
