@@ -208,6 +208,6 @@ def combine_csv_files(csv_folder="result/gemini-pro-1.5"):
 
 # 使用示例
 if __name__ == "__main__":
-    # combine_csv_files("result/qwen2.5-vl-72b-instruct_qa_with_negative_vanilla")
-    csv_path = "result/internvl3-14b_free_qa_vanilla_all.csv"  # 替换为你的CSV文件路径
+    combine_csv_files("result/qwen2.5-vl-72b-instruct_qa_with_negative_vanilla")
+    csv_path = "result/qwen2.5-vl-72b-instruct_qa_with_negative_vanilla_all.csv"  
     analyze_scores(csv_path)

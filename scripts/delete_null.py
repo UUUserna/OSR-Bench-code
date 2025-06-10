@@ -76,21 +76,3 @@ def process_directory(root_dir: str) -> None:
             if file.endswith(".json") and file != "cognitive_map.json":
                 file_path = os.path.join(root, file)
                 clean_json_file(file_path)
-
-
-def main():
-    # testdata_dir = os.path.join(os.path.dirname(__file__), "..", "testdata")
-    # if not os.path.exists(testdata_dir):
-    #     print(f"目录不存在: {testdata_dir}")
-    #     return
-    # print("开始处理文件...")
-    # process_directory(testdata_dir)
-    result_dir = os.path.join(os.path.dirname(__file__), "..", "result")
-    csv_file_path = os.path.join(result_dir, "gemini-pro-1.5_all_results_vanilla_qa_1_fixed.csv")
-    clean_csv_file(csv_file_path)
-
-    print("处理完成")
-
-
-if __name__ == "__main__":
-    main()

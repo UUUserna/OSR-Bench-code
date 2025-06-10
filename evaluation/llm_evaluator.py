@@ -147,7 +147,7 @@ def evaluate_with_openai(
 
 # Example usage
 def main():
-    api_key = "sk-c700051688684f28b7c9ed516686d61a"
+    api_key = ""
     
     # Test cases for each skill type
     test_cases = [
