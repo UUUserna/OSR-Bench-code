@@ -82,8 +82,6 @@ These commands will:
 The first command uses Google's Gemini-Pro 1.5 model.
 The second command uses a local LLaVA model with specified path, device, and GPU type.
 
-## License
-
 [License Information]
 
 MIT License
